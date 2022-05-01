@@ -6,7 +6,8 @@ from flask_sqlalchemy import SQLAlchemy #python sql use
 from flask_login import UserMixin, LoginManager, login_user, logout_user, login_required
 from werkzeug.security import generate_password_hash, check_password_hash
 import os
-from datetime import date #datetime get
+from datetime import datetime, date #datetime get
+import pytz
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///health_care.db"
@@ -88,6 +89,8 @@ def update(id):
             post.evening = request.form.get("evening")
             post.comment = request.form.get("comment")
 
+            post.create_at = datetime.strptime(post.create_at, '%Y-%m-%d')
+
             db.session.commit()
             return redirect("/edit")
     
@@ -132,3 +135,6 @@ def login():
 def logout():
     logout_user()
     return redirect("/login")
+
+    if __name__ == '__main__':
+        app.run()
