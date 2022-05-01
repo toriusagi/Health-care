@@ -1,4 +1,3 @@
-from streamlit as st
 from enum import unique #列挙unique
 from flask import Flask #web module
 from flask import render_template, request, redirect #file use request, redirect
@@ -8,6 +7,7 @@ from werkzeug.security import generate_password_hash, check_password_hash
 import os
 from datetime import date #datetime get
 
+webbrowser.open("./index.html")
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = "sqlite:///health_care.db"
