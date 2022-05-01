@@ -1,3 +1,4 @@
+from streamlit as st
 from enum import unique #列挙unique
 from flask import Flask #web module
 from flask import render_template, request, redirect #file use request, redirect
