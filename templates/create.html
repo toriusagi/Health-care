@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>新規登録</h1>
+<form method="POST">
+    <label for="text" name="bedtime">就寝時間</label>
+    <input type="text", name="bedtime">
+    <label for="text" name="wake_up">起床時間</label>
+    <input type="text", name="wake_up">
+    <label for="text" name="time_of_sleeping">睡眠時間</label>
+    <input type="text", name="time_of_sleeping">
+    <label for="text" name="weight">体重</label>
+    <input type="text", name="weight">
+    <label for="text" name="morning">朝</label>
+    <input type="text", name="morning">
+    <label for="text" name="noon">昼</label>
+    <input type="text", name="noon">
+    <label for="text" name="evening">夕</label>
+    <input type="text", name="evening">
+    <label for="text" name="comment">コメント</label>
+    <input type="text", name="comment">
+    <input type="submit", value="新規登録">
+</form> 
+{% endblock %}

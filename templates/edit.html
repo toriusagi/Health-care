@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Health care edit</h1>
+<a href="/create", role="button">新規作成</a>
+<a href="/", role="button">トップページ</a>
+<a href="/logout", role="button">ログアウト</a>
+    <table border="1">
+        <tr>
+            <th></th>
+            <th></th>
+            <th>日時</th>
+            <th>就寝</th>
+            <th>起床</th>
+            <th>睡眠時間</th>
+            <th>体重</th>
+            <th>朝</th>
+            <th>昼</th>
+            <th>夕</th>
+            <th>コメント</th>
+        </tr>
+        {% for post in posts[::-1] %}
+            <tr>
+                <th><a href="/{{ post.id }}/update", role="button">編集</a></th>
+                <th><a href="/{{ post.id }}/delete", role="button">削除</a></th>
+                <th>{{ post.create_at }}</th>
+                <th>{{ post.bedtime }}</th>
+                <th>{{ post.wake_up }}</th>
+                <th>{{ post.time_of_sleeping }}</th>
+                <th>{{ post.weight }}</th>
+                <th>{{ post.morning }}</th>
+                <th>{{ post.noon }}</th>
+                <th>{{ post.evening }}</th>
+                <th>{{ post.comment }}</th>
+            </tr>
+        {% endfor %}
+    </table>
+{% endblock %}
